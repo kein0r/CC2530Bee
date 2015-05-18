@@ -36,18 +36,18 @@
  * - AT Command - Queue Parameter Value: API Identifier Value: 0x09
  * - Remote AT Command Request: API Identifier Value: 0x17
  * - Remote Command Response: API Identifier Value: 0x97
- * - All kind of nonvolatile storage of parameters 
+ * - All kind of non-volatile storage of parameters 
 
  * Supported AT commands:
  * ========================
- * - Software Rese FR (R): 0x4652
+ * - Software Reset FR (R): 0x4652
  * - Channel CH (R/W): 0x4848
  * - PanID ID (R/W): 0x4944
  * - Destination Address High DH (R/W): 0x4448
  * - Destination Address Low DL (R/W): 0x444c
  * - Source Address 16Bit MY (R/W): 0x 4d59
- * - Serialnumber High SH (R): 0x5348
- * - Serialnumber Low SL (R): 0x534c
+ * - Serial number High SH (R): 0x5348
+ * - Serial number Low SL (R): 0x534c
 */
 
 /**
@@ -219,7 +219,7 @@ void main( void )
           }
       }
       else {
-        USART_writeline("ERROR (CRC)");
+        /* if crc NOT_OK just ignore the frame */
       }
       led_status = ~led_status;
     }
